@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CarePlus - Appointment Booking System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                CarePlus<span>+</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#doctors">Our Doctors</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <a href="#appointment" class="nav-button">
+                Book Appointment
+            </a>
+
+        </nav>
+    </header>
+
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="welcome">WELCOME TO CAREPLUS</p>
+
+            <h1>Your Health,<br>
+                Our <span>Priority</span>
+            </h1>
+
+            <p class="hero-description">
+                Get quality healthcare from experienced doctors.
+                Book your appointment easily and take the first step
+                towards a healthier life.
+            </p>
+
+            <a href="#appointment" class="primary-button">
+                Book Your Appointment
+            </a>
+
+            <a href="#doctors" class="secondary-button">
+                Meet Our Doctors
+            </a>
+
+        </div>
+
+        <div class="hero-card">
+            <div class="medical-icon">🏥</div>
+            <h2>Care You Can Trust</h2>
+            <p>
+                Professional healthcare services for you and your family.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- About Us Section -->
+    <section id="about" class="section">
+
+        <h2>About CarePlus</h2>
+
+        <p class="section-description">
+            CarePlus is a healthcare appointment booking website
+            designed to help patients find doctors and request
+            appointments conveniently.
+        </p>
+
+        <div class="about-cards">
+
+            <div class="info-card">
+                <h3>Our Mission</h3>
+                <p>
+                    To make healthcare services more accessible
+                    and convenient for patients.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>Our Vision</h3>
+                <p>
+                    To provide a simple and user-friendly
+                    healthcare booking experience.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>Patient Care</h3>
+                <p>
+                    To help patients organize their appointments
+                    and access healthcare information.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="section light-section">
+
+        <h2>Meet Our Doctors</h2>
+
+        <p class="section-description">
+            Explore our sample doctor profiles and choose
+            a specialization for your appointment request.
+        </p>
+
+        <div class="doctor-container">
+
+            <div class="doctor-card">
+                <div class="doctor-icon">👨‍⚕️</div>
+                <h3>Dr. Arun Kumar</h3>
+                <p>General Physician</p>
+                <p>Experience: 8 Years</p>
+            </div>
+
+            <div class="doctor-card">
+                <div class="doctor-icon">👩‍⚕️</div>
+                <h3>Dr. Priya Sharma</h3>
+                <p>Cardiologist</p>
+                <p>Experience: 10 Years</p>
+            </div>
+
+            <div class="doctor-card">
+                <div class="doctor-icon">👨‍⚕️</div>
+                <h3>Dr. Rahul Raj</h3>
+                <p>Dermatologist</p>
+                <p>Experience: 6 Years</p>
+            </div>
+
+            <div class="doctor-card">
+                <div class="doctor-icon">👩‍⚕️</div>
+                <h3>Dr. Meena Devi</h3>
+                <p>Pediatrician</p>
+                <p>Experience: 7 Years</p>
+            </div>
+
+        </div>
+
+        <p class="note">
+            Note: Doctor names and experience shown here are sample data
+            for the college project.
+        </p>
+
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+
+        <h2>Our Medical Services</h2>
+
+        <p class="section-description">
+            Select the appropriate department when requesting
+            your appointment.
+        </p>
+
+        <div class="services-container">
+
+            <div class="service-card">
+                <div class="service-icon">🩺</div>
+                <h3>General Medicine</h3>
+                <p>General health consultations and routine checkups.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">❤️</div>
+                <h3>Cardiology</h3>
+                <p>Consultations related to heart health.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🧴</div>
+                <h3>Dermatology</h3>
+                <p>Consultations for skin and hair concerns.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">👶</div>
+                <h3>Pediatrics</h3>
+                <p>Healthcare consultations for children.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Appointment Section -->
+    <section id="appointment" class="section light-section">
+
+        <h2>Book an Appointment</h2>
+
+        <p class="section-description">
+            Enter your details below to submit an appointment request.
+        </p>
+
+        <form id="appointmentForm" class="appointment-form">
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="patientName">Patient Name</label>
+                    <input
+                        type="text"
+                        id="patientName"
+                        placeholder="Enter your full name"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required>
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter 10-digit phone number"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="doctor">Select Doctor</label>
+
+                    <select id="doctor" required>
+                        <option value="">Choose a doctor</option>
+                        <option value="Dr. Arun Kumar">
+                            Dr. Arun Kumar - General Physician
+                        </option>
+                        <option value="Dr. Priya Sharma">
+                            Dr. Priya Sharma - Cardiologist
+                        </option>
+                        <option value="Dr. Rahul Raj">
+                            Dr. Rahul Raj - Dermatologist
+                        </option>
+                        <option value="Dr. Meena Devi">
+                            Dr. Meena Devi - Pediatrician
+                        </option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="date">Appointment Date</label>
+                    <input
+                        type="date"
+                        id="date"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Appointment Time</label>
+
+                    <select id="time" required>
+                        <option value="">Choose a time</option>
+                        <option value="09:00 AM">09:00 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="02:00 PM">02:00 PM</option>
+                        <option value="03:00 PM">03:00 PM</option>
+                        <option value="04:00 PM">04:00 PM</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <label for="reason">Reason for Appointment</label>
+
+                <textarea
+                    id="reason"
+                    rows="4"
+                    placeholder="Briefly describe the reason for your visit"
+                    required></textarea>
+            </div>
+
+
+            <button type="submit" class="submit-button">
+                Book Appointment
+            </button>
+
+            <p id="message" aria-live="polite"></p>
+
+        </form>
+
+        
+<div class="cancel-appointment">
+    <h3>Cancel Appointment</h3>
+    <p>Enter your Appointment ID to cancel your booking.</p>
+
+    <input
+        type="text"
+        id="cancelAppointmentId"
+        placeholder="Enter Appointment ID"
+        required
+    >
+
+    <button type="button" onclick="cancelAppointment()">
+        Cancel Appointment
+    </button>
+
+    <p id="cancelMessage"></p>
+</div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+
+        <h2>Contact Us</h2>
+
+        <p class="section-description">
+            Have questions about our booking system?
+            Contact us using the details below.
+        </p>
+
+        <div class="contact-container">
+
+            <div class="contact-card">
+                <h3>📍 Address</h3>
+                <p>CarePlus Healthcare Centre</p>
+                <p>Chengalpattu, Tamil Nadu</p>
+            </div>
+
+            <div class="contact-card">
+                <h3>📞 Phone</h3>
+                <p>+91 98765 43210</p>
+            </div>
+
+            <div class="contact-card">
+                <h3>✉️ Email</h3>
+                <p>careplus@example.com</p>
+            </div>
+
+        </div>
+
+        <p class="note">
+            Note: Contact details are sample details for demonstration.
+        </p>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <h3>CarePlus+</h3>
+
+        <p>
+            Making appointment booking simple and convenient.
+        </p>
+
+        <p>
+            &copy; 2026 CarePlus Appointment Booking System.
+            College Project Demonstration.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
