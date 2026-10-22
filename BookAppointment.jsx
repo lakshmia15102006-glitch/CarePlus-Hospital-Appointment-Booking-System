@@ -1,8 +1,24 @@
-```jsx
+
 import { useState } from "react";
 
 function BookAppointment() {
   const [success, setSuccess] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    doctor: "",
+    date: "",
+    message: "",
+  });
+
+  function handleChange(e) {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -10,98 +26,124 @@ function BookAppointment() {
   }
 
   return (
-    <div className="booking-page">
-      <div className="booking-heading">
-        <p>CAREPLUS HOSPITAL</p>
-        <h1>Book Your Appointment</h1>
-        <span>
-          Schedule your visit with our healthcare specialists.
-        </span>
-      </div>
+    <div
+      style={{
+        maxWidth: "600px",
+        margin: "40px auto",
+        padding: "30px",
+        background: "#ffffff",
+        borderRadius: "12px",
+        boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+      }}
+    >
+      <h1 style={{ textAlign: "center", color: "#087f8c" }}>
+        Book an Appointment
+      </h1>
 
-      <form
-        className="booking-form"
-        onSubmit={handleSubmit}
-      >
-        <label>Patient Full Name</label>
+      {success && (
+        <p
+          style={{
+            background: "#d4edda",
+            color: "#155724",
+            padding: "14px",
+            textAlign: "center",
+            borderRadius: "6px",
+          }}
+        >
+          Appointment booked successfully!
+        </p>
+      )}
+
+      <form onSubmit={handleSubmit}>
         <input
-          type="text"
-          placeholder="Enter your full name"
+          name="name"
+          placeholder="Full Name"
+          value={formData.name}
+          onChange={handleChange}
           required
+          style={inputStyle}
         />
 
-        <label>Email Address</label>
         <input
+          name="email"
           type="email"
-          placeholder="Enter your email"
+          placeholder="Email Address"
+          value={formData.email}
+          onChange={handleChange}
           required
+          style={inputStyle}
         />
 
-        <label>Phone Number</label>
         <input
+          name="phone"
           type="tel"
-          placeholder="Enter your phone number"
+          placeholder="Phone Number"
+          value={formData.phone}
+          onChange={handleChange}
           required
+          style={inputStyle}
         />
 
-        <label>Select Doctor</label>
-        <select required defaultValue="">
-          <option value="" disabled>
-            Choose a doctor
-          </option>
-          <option>Dr. Priya Sharma - Cardiologist</option>
-          <option>Dr. Arun Kumar - Neurologist</option>
-          <option>Dr. Meera Raj - Dermatologist</option>
-          <option>Dr. Rahul Verma - Pediatrician</option>
+        <select
+          name="doctor"
+          value={formData.doctor}
+          onChange={handleChange}
+          required
+          style={inputStyle}
+        >
+          <option value="">Select Doctor</option>
+          <option value="General Physician">General Physician</option>
+          <option value="Cardiologist">Cardiologist</option>
+          <option value="Dermatologist">Dermatologist</option>
+          <option value="Dentist">Dentist</option>
         </select>
 
-        <label>Appointment Date</label>
-        <input type="date" required />
+        <input
+          name="date"
+          type="date"
+          value={formData.date}
+          onChange={handleChange}
+          min={new Date().toISOString().split("T")[0]}
+          required
+          style={inputStyle}
+        />
 
-        <label>Appointment Time</label>
-        <select required defaultValue="">
-          <option value="" disabled>
-            Select a time
-          </option>
-          <option>09:00 AM</option>
-          <option>10:00 AM</option>
-          <option>11:00 AM</option>
-          <option>01:00 PM</option>
-          <option>02:00 PM</option>
-          <option>03:00 PM</option>
-          <option>04:00 PM</option>
-        </select>
-
-        <label>Reason for Visit</label>
         <textarea
-          placeholder="Briefly describe your reason for visiting"
-          rows="3"
+          name="message"
+          placeholder="Describe your problem (optional)"
+          value={formData.message}
+          onChange={handleChange}
+          style={{ ...inputStyle, minHeight: "90px" }}
         />
 
-        <button type="submit" className="book-btn">
+        <button
+          type="submit"
+          style={{
+            width: "100%",
+            padding: "14px",
+            background: "#087f8c",
+            color: "white",
+            border: "none",
+            borderRadius: "6px",
+            cursor: "pointer",
+            fontSize: "16px",
+          }}
+        >
           Book Appointment
         </button>
-
-        {success && (
-          <div
-            role="status"
-            style={{
-              color: "green",
-              backgroundColor: "#d4edda",
-              padding: "15px",
-              marginTop: "15px",
-              borderRadius: "8px",
-              fontWeight: "bold",
-              textAlign: "center",
-            }}
-          >
-            Appointment booked successfully!
-          </div>
-        )}
       </form>
     </div>
   );
 }
 
+const inputStyle = {
+  width: "100%",
+  padding: "12px",
+  marginBottom: "15px",
+  border: "1px solid #ccc",
+  borderRadius: "6px",
+  boxSizing: "border-box",
+  fontSize: "15px",
+};
+
 export default BookAppointment;
-```
